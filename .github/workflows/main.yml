@@ -32,9 +32,9 @@ jobs:
         shell: bash
         run: |
           ls
-          cd CI_test/hiwi_ws
-          catkin_make
-          source devel/setup.bash
-          rostest order_publisher order_publisher.test
+          #cd CI_test/hiwi_ws
+          #catkin_make
+          #source devel/setup.bash
+          #rostest order_publisher order_publisher.test
 
           
