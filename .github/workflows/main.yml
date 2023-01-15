@@ -34,7 +34,7 @@ jobs:
         shell: bash
         run: |
           cd ./hiwi_ws
-          catkin build
+          catkin_make
           source devel/setup.bash
           rostest order_publisher order_publisher.test
 
