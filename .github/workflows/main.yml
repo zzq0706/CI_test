@@ -22,7 +22,10 @@ jobs:
     # in which env the job runs, support fot Ubuntu/Windows/macOS。
     runs-on: ubuntu-20.04
     
-    container: ros:noetic-ros-base
+    container: 
+      image: ros:noetic-ros-base
+      volumes: 
+        - ${{ github.workspace }}
     
 
     # step is the smallest executable unit
