@@ -27,14 +27,15 @@ jobs:
       - name: use docker image
         uses: docker://ros:noetic-ros-base
 
+      - uses: actions/checkout@v3
+      
       # build the workspace
       - name: build the workspace
         shell: bash
         run: |
-          ls
-          #cd CI_test/hiwi_ws
-          #catkin_make
-          #source devel/setup.bash
-          #rostest order_publisher order_publisher.test
+          cd CI_test/hiwi_ws
+          catkin_make
+          source devel/setup.bash
+          rostest order_publisher order_publisher.test
 
           
