@@ -33,7 +33,7 @@ jobs:
       - name: build the workspace
         shell: bash
         run: |
-          cd CI_test/hiwi_ws
+          cd ./hiwi_ws
           catkin_make
           source devel/setup.bash
           rostest order_publisher order_publisher.test
