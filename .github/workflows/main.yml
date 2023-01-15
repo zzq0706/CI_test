@@ -24,10 +24,7 @@ jobs:
     
     container: 
       image: ros:noetic-ros-base
-      volumes: 
-        - ${{ github.workspace }}
     
-
     # step is the smallest executable unit
     steps:
       - uses: actions/checkout@v3
