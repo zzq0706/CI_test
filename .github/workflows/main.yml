@@ -17,9 +17,8 @@ on:
 
 # jobs are the tasks run in the workflow
 jobs:
-
-  # A job has setup / build / test units
-  build:
+  # A job 
+  test_ros_node:
     # in which env the job runs, support fot Ubuntu/Windows/macOS。
     runs-on: ubuntu-20.04
 
@@ -31,20 +30,9 @@ jobs:
       # build the workspace
       - name: build the workspace
         run: |
-          cd hiwi_ws  
+          cd hiwi_ws/  
           catkin_make
           source devel/setup.bash
+          rostest order_publisher order_publisher.test
 
-  test:
-    # in which env the job runs, support fot Ubuntu/Windows/macOS。
-    runs-on: ubuntu-20.04
-
-    # step is the smallest executable unit
-    steps:
-      - name: use docker image
-        uses: docker://ros:noetic-ros-base
-
-      # test ros node
-      - name: test ros node
-        run: rostest order_publisher order_publisher.test
           
