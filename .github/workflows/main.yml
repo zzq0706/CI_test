@@ -1,0 +1,45 @@
+# the name of the workflow
+name: demo
+
+# the trigger event
+on:
+  # triggered after push
+  push:
+    branches: 
+    - master
+  # trggered after pull request
+  pull_request:
+    branches:
+    - master
+
+  # Allows you to run this workflow manually from the Actions tab
+  workflow_dispatch:
+
+# jobs are the tasks run in the workflow
+jobs:
+  # A job has setup / build / test units
+  build:
+    # in which env the job runs, support fot Ubuntu/Windows/macOS。
+    runs-on: ros:noetic-ros-base
+
+    # step is the smallest executable unit
+    steps:
+
+      # build the workspace
+      - name: build the workspace
+        run: |
+          cd hiwi_ws  
+          catkin_make
+          source devel/setup.bash
+          rostest order_publisher order_publisher.test
+  test:
+    # in which env the job runs, support fot Ubuntu/Windows/macOS。
+    runs-on: ros:noetic-ros-base
+
+    # step is the smallest executable unit
+    steps:
+
+      # test ros node
+      - name: test ros node
+        run: rostest order_publisher order_publisher.test
+          
