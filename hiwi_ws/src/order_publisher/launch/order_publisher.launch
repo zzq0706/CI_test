@@ -1,0 +1,17 @@
+<?xml version="1.0"?>
+<launch>
+
+  <node pkg="order_publisher" type="order_publisher" name="order_publisher" output="screen">
+    <remap from="order" to="order_from_mc" />
+    <!-- frequency in second-->
+    <param name="new_order_frequency" value="30.0" />
+    <param name="order_update_frequency" value="5.0" />
+    <!-- number of nodes and released nodes in one order-->
+    <param name="num_of_nodes" value= "6" />
+    <param name="num_of_released_nodes" value= "3" />
+  </node>
+  
+  <node pkg="order_publisher" type="logic_examinator" name="logic_examinator" output="screen"/>
+
+
+</launch>
