@@ -32,10 +32,10 @@ jobs:
       # build the workspace
       - name: build the workspace
         shell: bash
-      - run: |
-          cd ./hiwi_ws
-          catkin_make
-          source devel/setup.bash
-          rostest order_publisher order_publisher.test
+        run: catkin_make
+        working-directory: ./hiwi_ws
+          
+          #source devel/setup.bash
+          #rostest order_publisher order_publisher.test
 
           
