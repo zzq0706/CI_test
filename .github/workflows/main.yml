@@ -17,13 +17,17 @@ jobs:
   test_ros_node:
     # env settings, support fot Ubuntu/Windows/macOS。
     runs-on: ubuntu-20.04
+    # run the code on a docker container
     container: 
       image: ros:noetic-ros-base
     # step is the smallest executable unit
     steps:
-      - uses: actions/checkout@v3
+      - name: checkout the code
+        uses: actions/checkout@v3
+        
       - name: build the workspace
         shell: bash
+        # "|" stands for multiline commands
         run: |
           source /opt/ros/noetic/setup.bash
           cd ./hiwi_ws
