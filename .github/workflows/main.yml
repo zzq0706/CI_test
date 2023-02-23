@@ -15,7 +15,7 @@ on:
 jobs:
   # A job name 
   test_ros_node:
-    # env settings, support fot Ubuntu/Windows/macOS。
+    # env settings, support fot Ubuntu/Windows/macOS
     runs-on: ubuntu-20.04
     # run the code on a docker container
     container: 
