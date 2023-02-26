@@ -28,6 +28,7 @@ jobs:
       uses: SonarSource/sonarcloud-github-c-cpp@v1.3
     - name: Run build-wrapper
       run: |
+        sudo apt install curl
         # build-preparation steps
         source /opt/ros/noetic/setup.bash
         cd ./hiwi_ws
