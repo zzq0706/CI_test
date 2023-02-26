@@ -28,7 +28,7 @@ jobs:
       run: |
         sudo apt update
         sudo apt upgrade
-        sudo apt install curl
+        sudo apt install -y curl
     - name: SonarCloud Scan for C and C++
       uses: SonarSource/sonarcloud-github-c-cpp@v1.3
     - name: Run build-wrapper
