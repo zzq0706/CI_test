@@ -25,7 +25,10 @@ jobs:
         # Disabling shallow clone is recommended for improving relevancy of reporting
         fetch-depth: 0
     - name: install curl
-      run: sudo apt install curl
+      run: |
+        sudo apt update
+        sudo apt upgrade
+        sudo apt install curl
     - name: SonarCloud Scan for C and C++
       uses: SonarSource/sonarcloud-github-c-cpp@v1.3
     - name: Run build-wrapper
