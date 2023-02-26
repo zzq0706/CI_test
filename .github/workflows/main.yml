@@ -26,8 +26,8 @@ jobs:
         fetch-depth: 0
     - name: install curl
       run: |
-        sudo apt update
-        sudo apt upgrade
+        sudo apt update -y 
+        sudo apt upgrade -y 
         sudo apt install -y curl
     - name: SonarCloud Scan for C and C++
       uses: SonarSource/sonarcloud-github-c-cpp@v1.3
