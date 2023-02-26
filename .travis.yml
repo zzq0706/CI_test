@@ -8,4 +8,8 @@ env:
 before_install:
   - docker pull osrf/ros:${ROS_DISTRO}-desktop-full
 script:
-  - docker run -it --rm -v $(pwd):/root --env ROS_DISTRO=${ROS_DISTRO} osrf/ros:${ROS_DISTRO}-desktop-full /bin/bash -c "cd /root/hiwi_ws; source /opt/ros/${ROS_DISTRO}/setup.bash; catkin_make; rostest order_publisher order_publisher.test"
+  - docker run -it --rm -v $(pwd):/root --env 
+    ROS_DISTRO=${ROS_DISTRO} osrf/ros:${ROS_DISTRO}-desktop-full 
+    /bin/bash -c 
+    "cd /root/hiwi_ws; source /opt/ros/${ROS_DISTRO}/setup.bash; catkin_make; 
+    source devel/setup.bash; rostest order_publisher order_publisher.test"
