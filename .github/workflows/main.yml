@@ -33,8 +33,9 @@ jobs:
     - name: SonarCloud Scan for C and C++
       uses: SonarSource/sonarcloud-github-c-cpp@v1.3
     - name: Run build-wrapper
+      shell: bash
       run: |
-        # build-preparation steps
+        # build-preparation steps        
         source /opt/ros/noetic/setup.bash
         cd ./hiwi_ws
         build-wrapper-linux-x86-64 --out-dir ${{ env.BUILD_WRAPPER_OUT_DIR }} catkin_make
